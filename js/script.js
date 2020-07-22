@@ -206,6 +206,7 @@ function generateTags() {
     /* find tags wrapper */
     let tagsWrapper = article.querySelector(optArticleTagsSelector);
 
+
     // console.log(tagsWrapper);
 
     /* make html variable with empty string */
@@ -268,7 +269,7 @@ function generateTags() {
 
   /* [NEW] add html from allTags to tagList */
   // tagList.innerHTML = allTags.join(' ');
-  // console.log('allTags', allTags);
+  console.log('allTags', allTags);
 
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
@@ -282,7 +283,8 @@ function generateTags() {
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
     console.log('tag = ', tag);
-    allTagsHTML += '<a href="#tag-' + tag + '" class ="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '(' + allTags[tag] + ') </a>' + '\n';
+    // allTagsHTML += '<a href="#tag-' + tag + '" class ="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '(' + allTags[tag] + ') </a>' + '\n';
+    allTagsHTML += '<a href="#tag-' + tag + '" class ="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '</a>' + '\n';
   }
   /* [NEW] END LOOP: for each tag in allTags: */
 
@@ -373,10 +375,17 @@ function addClickListenersToTags() {
   // console.log('function addClickListenersToTags');
   /* find all links to tags */
   const tagLinks = document.querySelectorAll('.post a[href^="#tag-"]');
+  const tagRightLinks = document.querySelectorAll('.tags a[href^="#tag-"]');
   //document.querySelectorAll('.titles');
   // console.log(tagLinks);
   /* START LOOP: for each link */
   for (tagLink of tagLinks) {
+
+    /* add tagClickHandler as event listener for that link */
+    tagLink.addEventListener('click', tagClickHandler);
+    /* END LOOP: for each link */
+  }
+  for (tagLink of tagRightLinks) {
 
     /* add tagClickHandler as event listener for that link */
     tagLink.addEventListener('click', tagClickHandler);

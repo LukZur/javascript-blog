@@ -110,4 +110,39 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }
+
+.tag-size-1 {
+  font-size: smaller;
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-size-2 {
+  font-size: small;
+  color: blue;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-size-3 {
+  font-size: medium;
+  color: orange;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-size-4 {
+  font-size: large;
+  color: violet;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-size-5 {
+  font-size: larger;
+  color: darkgreen;
+  font-weight: bold;
+  display: inline-block;
+}
 /*# sourceMappingURL=style.css.map */
